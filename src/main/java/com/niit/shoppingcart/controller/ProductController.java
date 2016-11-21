@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 /*import org.springframework.web.servlet.ModelAndView;*/
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.model.Product;
 
@@ -18,6 +20,14 @@ public class ProductController {
 	
 		@Autowired
 	private ProductDAO productDAO;
+		@Autowired
+		private CategoryDAO categoryDAO;
+		@Autowired
+		private CategoryDAO categoryDAO;
+		
+		
+		private Part path;
+		
 
 	@RequestMapping(value="/Product")
 	public String getAllData(@ModelAttribute("product")Product product,BindingResult result,Model model)

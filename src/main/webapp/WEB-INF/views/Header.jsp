@@ -1,8 +1,12 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language ="java" contentType="text/html;  charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>ShoppingC</title>
+  
+  <title>ShoppingCart</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,8 +14,12 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="E:\DigiNxt\workspace\ShoppingCart\glyphicon\glyphicons\png"></script>
+  <link rel="stylesheet" href="E:\DigiNxt\workspace\ShoppingCart\glyphicon\glyphicons\png">
   <style>
   body {
+      background-image: #url("paper.gif");
+      background-color: rgba(192,192,192,0.3);
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       color: #818181;
@@ -33,7 +41,7 @@
   .jumbotron {
       background-color: #f4511e;
       color: #fff;
-      padding: 100px 25px;
+      padding: 100px 20px;
       font-family: Montserrat, sans-serif;
   }
   .container-fluid {
@@ -45,6 +53,10 @@
   .logo-small {
       color: #f4511e;
       font-size: 50px;
+  }
+  .logo-small-small {
+      color: yellow;
+      font-size: 25px;
   }
   .logo {
       color: #f4511e;
@@ -60,16 +72,20 @@
       height: 100%;
       margin-bottom: 10px;
   }
-  .carousel-control.right, .carousel-control.left {
+  
+  
+  .carousel-control.right, .carousel-control.left {       dots colour
       background-image: none;
       color: #f4511e;
   }
   .carousel-indicators li {
-      border-color: #f4511e;
+      border-color: transparent;
   }
   .carousel-indicators li.active {
-      background-color: #f4511e;
+      background-color: transparent;
   }
+  
+  
   .item h4 {
       font-size: 19px;
       line-height: 1.375em;
@@ -104,7 +120,7 @@
       border-bottom-right-radius: 0px;
   }
   .panel-footer {
-      background-color: white !important;
+      background-color: white !important;   
   }
   .panel-footer h3 {
       font-size: 32px;
@@ -120,7 +136,7 @@
   }
   .navbar {
       margin-bottom: 0;
-      background-color: #errew;
+      background-color: #f4511e; /* navbarcolour */
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -129,16 +145,19 @@
       border-radius: 0;
       font-family: Montserrat, sans-serif;
   }
+  
   .navbar li a, .navbar .navbar-brand {
       color: black !important;
   }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
+  
+  .navbar-nav li a:hover, .navbar-nav li.active a {    /*hover colour*/
       color: #f4511e !important;
       background-color: #fff !important;
   }
+  
   .navbar-default .navbar-toggle {
       border-color: #transparent;
-      color: #fff !important;
+      color: #f4511e !important;
   }
   footer .glyphicon {
       font-size: 20px;
@@ -201,23 +220,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#myPage">Home</a>
+      <a class="navbar-brand" href="index">Home<span class="glyphicon glyphicon-fire logo-small-small"></span></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <!-- <li><a href="#portfolio">ADMIN</a></li> -->
+        
+        
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="index">ADMIN<span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown"  href="#Admin">ADMIN <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="Supplier">supplier</a></li>
             <li><a href="Category">category</a></li>
             <li><a href="Product">products</a></li>
           </ul>
         </li>
-        
-        <li><a href="register">Sign Up</a></li>
-        <li><a href="login">Login</a></li>
+        <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#about">ABOUT</a></li>
         <li><a href="#contactus">Contact Us</a></li>
       </ul>
     </div>
@@ -225,134 +244,215 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1>Company</h1>
-  <p>We specialize in E-cart</p>
-  <form class="form-inline">
-    <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-    <button type="button" class="btn btn-danger">Subscribe</button>
-  </form>
+<form class="form-inline">
+    <c:if test="${UserClickedProducts}">
+    <input type="text" class="form-control" size="50" placeholder="Product Name" required>
+    <a href="#product"><button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-search"></span> Search
+      </button></a>
+    </c:if>
+     <c:if test="${UserClickedSupplier}">
+    <input type="text" class="form-control" size="50" placeholder="Supplier Name" required>
+    <a href="#product"><button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-search"></span> Search
+      </button></a>
+    </c:if>
+     <c:if test="${UserClickedCategory}">
+    <input type="text" class="form-control" size="50" placeholder="Category Name" required>
+    <a href="#product"><button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-search"></span> Search
+      </button></a>
+    </c:if>
+    <c:if test="${Homepage}">
+    <input type="text" class="form-control" size="50" placeholder="Product Name" required>
+    <a href="#product"><button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-search"></span> Search
+      </button></a>
+    </c:if>
+    <c:if test="${indexpage}">
+    <input type="text" class="form-control" size="50" placeholder="Product Name" required>
+    <a href="#product"><button type="button" class="btn btn-info">
+      <span class="glyphicon glyphicon-search"></span> Search
+      </button></a>
+    </c:if>
+    
+    <!-- connect this -->
+</form>
 </div>
 
-<!-- Container (About Section) -->
-<div id="about" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-8">
-      <h2>About Company Page</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
-    </div>
-  </div>
-</div>
 
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
- 
-<!-- Container (Services Section) -->
-<div id="services" class="container-fluid text-center">
-  <h2>SERVICES</h2>
+<c:if test="${UserClickedLogin}">
+<jsp:include page="login.jsp"></jsp:include>
+</c:if>
+
+<c:if test="${errorMessage}">
+invalid credentials
+<jsp:include page="login.jsp"></jsp:include>
+</c:if>
+
+<c:if test="${UserClickedRegister}">
+<jsp:include page="register.jsp"></jsp:include>
+</c:if>
+
+<c:if test="${UserClickedSupplier}">
+<jsp:include page="supplier.jsp"></jsp:include>
+</c:if>
+
+<c:if test="${UserClickedProducts}">
+<jsp:include page="products.jsp"></jsp:include>
+</c:if>
+
+<c:if test="${UserClickedCategory}">
+<jsp:include page="category.jsp"></jsp:include>
+</c:if>
+
+
+
+
+
+<div id="Categories" class="container-fluid text-center bg-grey">
+
+<h2>VIRTUAL MARKET</h2><br>
   <h4>What we offer</h4>
-  <br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
+ 
+ <div class="row text-center slideanim">
+ 
+ 	<div class="col-sm-4">
+		<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+   			 Electronics
+    		<ol class="carousel-indicators">
+      		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+     		<li data-target="#myCarousel" data-slide-to="1"></li>
+     		<li data-target="#myCarousel" data-slide-to="2"></li>
+    		</ol> 
+    
+ 			<!-- Wrapper for slides -->
+    		<div class="carousel-inner" role="listbox">
+     		 
+     		 <div class="item active">
+        	<img src="D:\Electronics.jpg" alt="Electronics" width="300" height="200"><br><span style="font-style:normal;">Phones</span>
+      		</div>
+      		<div class="item">
+        	<img src="D:\Electronics.jpg" alt="Electronics" width="300" height="200"><br><span style="font-style:normal;">Accesories</span>
+      		</div>
+      		<div class="item">
+        	<img src="D:\Electronics.jpg" alt="Electronics" width="300" height="200"><br><span style="font-style:normal;">Lap-tops</span>
+     		</div>
+     		
+    		</div> 
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <p>Phones,Mobile Accessories,Lap-tops,TV's,..</p>
+		</div>
+
 </div>
 
-<!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center bg-grey">
-  <h2>Portfolio</h2><br>
-  <h4>What we have created</h4>
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Yes, we built Paris</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="newyork.jpg" alt="New York" width="400" height="300">
-        <p><strong>New York</strong></p>
-        <p>We built New York</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-        <p><strong>San Francisco</strong></p>
-        <p>Yes, San Fran is ours</p>
-      </div>
-    </div>
-  </div><br>
-  
-  <h2>What our customers say</h2>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
+<div class="col-sm-4">
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    Books and More
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    </ol> 
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
+        <img src="D:\Electronics.jpg" alt="Books & More" width="300" height="200"><br><span style="font-style:normal;">Books</span>
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
+        <img src="D:\Electronics.jpg" alt="Books & More" width="300" height="200"><br><span style="font-style:normal;">Stationary</span>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+        <img src="D:\Electronics.jpg" alt="Books & More" width="300" height="200"><br><span style="font-style:normal;">Music</span>
       </div>
-    </div>
+    </div> 
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <p>Books,Stationary,Gaming,Music</p>
+</div>
+</div>
+  
+<div class="col-sm-4">
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    Clothing
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol> 
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="D:\Electronics.jpg" alt="Clothing" width="300" height="200"><br><span style="font-style:normal;">Men</span>
+      </div>
+      <div class="item">
+        <img src="D:\Electronics.jpg" alt="Clothing" width="300" height="200"><br><span style="font-style:normal;">Women</span>
+      </div>
+      <div class="item">
+        <img src="D:\Electronics.jpg" alt="Clothing" width="300" height="200"><br><span style="font-style:normal;">Children</span>
+      </div>
+    </div> 
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <p>Mens,Womens,Children</p>
+  </div>
+</div> 
+</div>
+
+</div>
+
+
+ 
+   
+  
+  <h2>What our customers say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    Indicators
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol> 
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"1"<br><span style="font-style:normal;">A</span></h4>
+      </div>
+      <div class="item">
+        <h4>"2"<br><span style="font-style:normal;">B</span></h4>
+      </div>
+      <div class="item">
+        <h4>"3"<br><span style="font-style:normal;">C</span></h4>
+      </div>
+    </div> 
 
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -364,10 +464,66 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
+
+
+
+
+
+
+
+<!-- Container (Admin Section) -->
+<div id="Admin" class="container-fluid text-center">
+  <h2>ADMIN</h2>
+  <!-- <h4>What we offer</h4> -->
+  <br>
+  <div class="row slideanim">
+   
+    <div class="col-sm-4">
+      <a href="Supplier"><span class="	glyphicon glyphicon-briefcase logo-small"></span></a>
+      <h4>Supplier</h4>
+      <p>Supplier details</p>
+    </div>
+        <div class="col-sm-4">
+      <a href="Category"><span class="glyphicon glyphicon-tasks logo-small"></span></a>
+      <h4>Category</h4>
+      <p>Category details</p>
+    </div>
+       <div class="col-sm-4">
+      <a href="Product"><span class="glyphicon glyphicon-gift logo-small"></span></a>
+      <h4>Product</h4>
+      <p>Product details</p>
+    </div>
+    
+  </div>
+  </div>
+  
+ 
+
+  
+
+  <!-- <br><br> -->
+  <!-- <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+ -->
+
 
 <!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
+<!-- <div id="pricing" class="container-fluid">
   <div class="text-center">
     <h2>Pricing</h2>
     <h4>Choose a payment plan that works for you</h4>
@@ -431,30 +587,61 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Company Page</h2><br>
+      <h4>Created by</h4><br>
+      <p>Thrinath Nelaturi</p>
+      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
 </div>
 
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Take over the world </h4><br>
+      <p><strong>VISION:</strong>HAIL HITLER :P</p>
+    </div>
+  </div>
+</div>
 <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
+<div id="contactus" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACT</h2>
   <div class="row">
     <div class="col-sm-5">
       <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Hyderabad, IND</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91-9440617841</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> thrinath.nelaturi@gmail.com</p>
     </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+    
+  <!--   copy this code for login page and connect to administer page for showing the information typed by users -->
+  
+  
+<div class="col-sm-7 slideanim">
+ <div class="row">
+  <div class="col-sm-6 form-group">
+   <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+    </div>
+      <div class="col-sm-6 form-group">
+       <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
+            </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+            <div class="row">
+            <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Send</button>
         </div>
       </div>
@@ -462,9 +649,9 @@
   </div>
 </div>
 
-<div id="googleMap" style="height:400px;width:100%;"></div>
+<!-- <div id="googleMap" style="height:400px;width:100%;"></div>
 
-<!-- Add Google Maps -->
+Add Google Maps
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
 var myCenter = new google.maps.LatLng(41.878114, -87.629798);
@@ -488,13 +675,13 @@ marker.setMap(map);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+</script> -->
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+  <!-- <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p> -->
 </footer>
 
 <script>

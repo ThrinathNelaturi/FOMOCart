@@ -1,5 +1,7 @@
 package com.niit.shoppingcart.model;
 
+import java.beans.Transient;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,6 +20,14 @@ public class Product {
 	private String name;
 	private String description;
 	private double price;
+	private int categoryid;
+	private int supplierid;
+	
+	@Transient
+	private MultipartFile image;
+	
+	
+	
 	public int getId() {
 		return id;
 	}

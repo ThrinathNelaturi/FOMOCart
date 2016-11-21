@@ -10,18 +10,18 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-
 @RequestMapping("/")
-	public String gotoHome()
+	public String gotoHome(Model model)
 	{
-		return "index";
+	model.addAttribute("Homepage","true");	
+	return "Header";
 	}
 
-
 @RequestMapping("/index")
-public String gotoHomepage()
+public String gotoHomepage(Model model)
 {
-	return "index";
+	model.addAttribute("indexpage","true");
+	return "Header";
 }
 
 @RequestMapping("/validate")
@@ -36,14 +36,14 @@ if (id.equals("niit") && pwd.equals("niit"))
 else 
 	{
 		model.addAttribute("errorMessage","true");
-		return "index";
+		return "Header";
 	}
 }
 	
 @RequestMapping("/login")
 public  ModelAndView login(Model model)
 {
-	ModelAndView mv=new ModelAndView("index");
+	ModelAndView mv=new ModelAndView("Header");
 	model.addAttribute("UserClickedLogin","true");
 	return mv;
 }

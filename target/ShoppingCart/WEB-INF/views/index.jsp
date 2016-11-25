@@ -9,7 +9,7 @@
 
 
 
-<c:if test="${errorMessage}">
+<%-- <c:if test="${errorMessage}">
 invalid credentials
 <jsp:include page="login.jsp"></jsp:include>
 </c:if>
@@ -34,8 +34,7 @@ invalid credentials
 <c:if test="${UserClickedCategory}">
 <jsp:include page="category.jsp"></jsp:include>
 </c:if>
-
-
+ --%>
 </body>
 
 

@@ -9,6 +9,5 @@ public interface CategoryDAO
 	List<Category> list();
 	boolean save(Category category);
 	boolean delete(int cid);
-	
-	
+		
 }

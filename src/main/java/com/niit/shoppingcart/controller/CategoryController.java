@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-/*import org.springframework.web.servlet.ModelAndView;*/
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.model.Category;
@@ -23,11 +23,12 @@ public class CategoryController {
 		private CategoryDAO categoryDAO;
 
 		@RequestMapping(value="/Category")
-		public String getAllData(@ModelAttribute("category")Category category,BindingResult result,Model model)
+		public ModelAndView getAllData(@ModelAttribute("category")Category category,BindingResult result,Model model)
 		{
+			ModelAndView mv=new ModelAndView("/index");
 		model.addAttribute("categoryList",categoryDAO.list());
 		model.addAttribute("UserClickedCategory","true");
-			return "index";
+			return mv;
 		}
 		
 		

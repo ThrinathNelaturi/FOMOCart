@@ -1,9 +1,13 @@
+com\niit\shoppingcart\model\Login.class
 com\niit\shoppingcart\dao\impl\SupplierDAOImpl.class
+com\niit\shoppingcart\dao\impl\LoginDAOImpl.class
 com\niit\shoppingcart\controller\SupplierController.class
 com\niit\shoppingcart\controller\ProductController.class
+com\niit\shoppingcart\controller\LoginController.class
 com\niit\shoppingcart\model\Category.class
 com\niit\shoppingcart\config\ApplicationContextConfig.class
 com\niit\shoppingcart\dao\ProductDAO.class
+com\niit\shoppingcart\dao\LoginDAO.class
 com\niit\shoppingcart\dao\impl\CategoryDAOImpl.class
 com\niit\shoppingcart\dao\impl\ProductDAOImpl.class
 com\niit\shoppingcart\controller\CategoryController.class

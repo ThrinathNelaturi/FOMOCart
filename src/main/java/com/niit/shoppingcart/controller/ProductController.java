@@ -20,13 +20,13 @@ public class ProductController {
 	
 		@Autowired
 	private ProductDAO productDAO;
-		@Autowired
-		private CategoryDAO categoryDAO;
-		@Autowired
-		private CategoryDAO categoryDAO;
+		/*@Autowired
+		private CategoryDAO categoryDAO;*/
+		/*@Autowired
+		private CategoryDAO supplierDAO;*/
 		
 		
-		private Part path;
+		/*private Part path;*/
 		
 
 	@RequestMapping(value="/Product")

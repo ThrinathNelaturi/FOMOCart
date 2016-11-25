@@ -20,7 +20,7 @@
   body {
       background-image: #url("paper.gif");
       background-color: rgba(192,192,192,0.3);
-      font: 400 15px Lato, sans-serif;
+      font: Montserrat, sans-serif;
       line-height: 1.8;
       color: #818181;
   }
@@ -74,8 +74,9 @@
   }
   
   
-  .carousel-control.right, .carousel-control.left {       dots colour
-      background-image: none;
+  .carousel-control.right, .carousel-control.left {      
+      dots
+      colour background-image: none;
       color: #f4511e;
   }
   .carousel-indicators li {
@@ -432,7 +433,7 @@ invalid credentials
  
    
   
-  <h2>What our customers say</h2>
+  <center><h2>What our customers say</h2></center>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     Indicators
     <ol class="carousel-indicators">
@@ -501,93 +502,7 @@ invalid credentials
 
   
 
-  <!-- <br><br> -->
-  <!-- <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
- -->
 
-
-<!-- Container (Pricing Section) -->
-<!-- <div id="pricing" class="container-fluid">
-  <div class="text-center">
-    <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4>
-  </div>
-  <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Basic</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Pro</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Premium</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
@@ -649,33 +564,6 @@ invalid credentials
   </div>
 </div>
 
-<!-- <div id="googleMap" style="height:400px;width:100%;"></div>
-
-Add Google Maps
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-
-function initialize() {
-var mapProp = {
-  center:myCenter,
-  zoom:12,
-  scrollwheel:false,
-  draggable:false,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker = new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script> -->
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">

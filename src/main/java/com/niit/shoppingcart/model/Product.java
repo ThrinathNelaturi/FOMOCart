@@ -20,12 +20,12 @@ public class Product {
 	private String name;
 	private String description;
 	private double price;
-	private int categoryid;
+	/*private int categoryid;
 	private int supplierid;
-	
-	@Transient
+	*/
+	/*@Transient
 	private MultipartFile image;
-	
+	*/
 	
 	
 	public int getId() {

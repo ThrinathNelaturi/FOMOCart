@@ -181,6 +181,7 @@
       transform: translateY(0%);
     }
   }
+  
   @-webkit-keyframes slide {
     0% {
       opacity: 0;
@@ -190,7 +191,8 @@
       opacity: 1;
       -webkit-transform: translateY(0%);
     }
-  }
+   }
+  
   @media screen and (max-width: 768px) {
     .col-sm-4 {
       text-align: center;
@@ -201,11 +203,13 @@
         margin-bottom: 35px;
     }
   }
+  
   @media screen and (max-width: 480px) {
     .logo {
         font-size: 150px;
     }
   }
+  
   </style>
 </head>
 <body>

@@ -22,23 +22,8 @@ public class ProductDAOImpl implements ProductDAO {
     this.sessionFactory=sessionFactory;
   }
 
-    //save -save the record - if the record exist it will throw error
-  	//update - update the record - if the record does not exist, it will throw error
-  	//save or update - if the record exist, it will update
-  	//                 - if the record does not exist it will create
-  	/*@Transactional
-  	public boolean saveOrUpdate(Product product){
-  		try {
-  			System.out.println("save method");
-  		sessionFactory.getCurrentSession().save(product);
-  		return true;
-  		} catch(HibernateException e){
-  			e.printStackTrace();
-  			return false;
-  		}
-  		
-  	}*/
-  
+ 
+  	
     @Transactional
 	public boolean update(Product product){
 		try {
@@ -104,6 +89,11 @@ public class ProductDAOImpl implements ProductDAO {
 		List<Product> listProduct = (List<Product>) query.list();
 		return listProduct;
 	}
+	 //save -save the record - if the record exist it will throw error
+  	//update - update the record - if the record does not exist, it will throw error
+  	//save or update - if the record exist, it will update
+  	//                 - if the record does not exist it will create
+	
 	
 	@Transactional
 	public boolean saveOrUpdate(Product product) {

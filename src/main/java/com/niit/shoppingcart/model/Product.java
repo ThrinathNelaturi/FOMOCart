@@ -23,7 +23,7 @@ public class Product {
 	private double price;
 	private int categoryid;
 	private int supplierid;
-@Transient
+   @Transient
 	private MultipartFile image;
 	
 	

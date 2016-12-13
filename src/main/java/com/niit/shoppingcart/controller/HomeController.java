@@ -14,8 +14,15 @@ public class HomeController {
 	public String gotoHome(Model model)
 	{
 	model.addAttribute("Homepage","true");	
-	return "Header";
+	return "index";
 	}
+
+/*@RequestMapping("/ShoppingCart")
+public String gotoHome1(Model model)
+{
+model.addAttribute("Homepage","true");	
+return "Header";
+}*/
 
 @RequestMapping("/index")
 public String gotoHomepage(Model model)

@@ -5,8 +5,8 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+/*import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import com.niit.shoppingcart.dao.CategoryDAO;
@@ -50,7 +50,7 @@ public class CategoryDAOImpl implements CategoryDAO
 	}
     
     @Transactional
-	public boolean save(Category category) {
+	public boolean saveOrUpdate(Category category) {
 		try {
 			sessionFactory.getCurrentSession().saveOrUpdate(category);
 			return true;

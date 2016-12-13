@@ -12,8 +12,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-
 import com.niit.shoppingcart.dao.*;
 import com.niit.shoppingcart.dao.impl.*;
 import com.niit.shoppingcart.model.*;

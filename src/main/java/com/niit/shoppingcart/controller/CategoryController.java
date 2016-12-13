@@ -31,12 +31,12 @@ public class CategoryController {
 			return mv;
 		}
 		
-		
-		@RequestMapping(value="/addCategory",method = RequestMethod.POST)
+	   
+	   @RequestMapping(value="/addCategory",method = RequestMethod.POST)
 	   public String addItem(@ModelAttribute("category") Category category)
 		{
 			
-			this.categoryDAO.save(category);
+			this.categoryDAO.saveOrUpdate(category);
 			return "redirect:/Category";
 			
 		}

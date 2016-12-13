@@ -7,7 +7,7 @@ public interface CategoryDAO
 {
 	Category get(int cid);
 	List<Category> list();
-	boolean save(Category category);
+	boolean saveOrUpdate(Category category);
 	boolean delete(int cid);
 		
 }

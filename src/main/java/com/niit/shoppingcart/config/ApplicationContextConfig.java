@@ -54,7 +54,10 @@ public class ApplicationContextConfig {
 			sessionBuilder.addAnnotatedClasses(Product.class);
 			sessionBuilder.addAnnotatedClasses(Supplier.class);
 			sessionBuilder.addAnnotatedClasses(Category.class);
-			sessionBuilder.addAnnotatedClasses(Login.class);
+			/*sessionBuilder.addAnnotatedClasses(Login.class);
+			sessionBuilder.addAnnotatedClasses(User.class);
+			sessionBuilder.addAnnotatedClasses(Cart.class);
+			sessionBuilder.addAnnotatedClasses(Card.class);*/
 			
 			System.out.println("Session");
 			
@@ -90,9 +93,21 @@ public class ApplicationContextConfig {
 				return new SupplierDAOImpl(sessionFactory);
 		}
 		
-		@Autowired
+		/*@Autowired
 		@Bean(name = "loginDAO")
 		public LoginDAO getLoginDao(SessionFactory sessionFactory) {
 				return new LoginDAOImpl(sessionFactory);
 		}
+		
+		@Autowired
+		@Bean(name = "cartDAO")
+		public CartDAO getCartDao(SessionFactory sessionFactory) {
+				return new CartDAOImpl(sessionFactory);
+		}
+		
+		@Autowired
+		@Bean(name = "userDAO")
+		public UserDAO getUserDao(SessionFactory sessionFactory) {
+				return new UserDAOImpl(sessionFactory);
+		}*/
 }

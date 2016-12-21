@@ -209,86 +209,20 @@
   </style>
 </head>
 <body>
-
-
-
+<jsp:include page="LoginHeader.jsp"></jsp:include>
 <form:form action="addLogin" modelAttribute="login" method="post" id="btn-add">
 	<h3>
-	<c:if test="${login.lid==0}">
-	<h2>Enter Your Credentials</h2>
-	</c:if>
-	<br>
-    <c:if test="${!empty login.lid}">
-	<h2>Update Login Details for LId: </h2>  <c:out value="${login.lid}"/>
-    </c:if>
+	
+	Enter Your Credentials
+	
 	</h3>
 	
+	User ID:   <form:input  path="loginId"/>
+	Password:  <form:input path="password"/> 
 	
-<table>	
-	 <c:if test="${login.lid!=0}">
-	<td> LId:</td> <td><form:input  path="lid"/></td> 
-	</c:if> 
+   <button type="button" class="btn btn-success">Success</button>
 	
-	
-	    <tr> <td>User ID: </td> <td><form:input  path="loginId"/></td> </tr>
-	    <tr> <td>Password:</td> <td><form:input path="password"/> </td> </tr>
-	    <tr> <td>Login type:</td> <td><form:input path="loginType"/> </td> </tr>
-	<!-- <div class="form-group">
-      <label for="usr">User ID:</label>
-      <input type="text" class="form-control" name="userID" path="lid">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" name="password" path="cname">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Login type:</label>
-      <input type="text" class="form-control" name="type" path="loginType">
-    </div> -->
-    
-    
-    
-    <c:if test="${category.cid==0}">
-    <input type="submit" value="login" id="btn-add">
-    </c:if>
-    <c:if test="${category.cid!=0}">
-    <input type="submit" value="Update" id="btn-update">
-    </c:if>
-    <tr> <td colspan="2" class="success-msg">
-		   <c:out value="${msg}"/>
-		</td> 
-		</tr>
-</table>	
-<table>   
-		 <tr>	 <td> LID </td>
-		 		 <td> Login user Name </td>
-		         <td> Password </td>
-				 <td> loginType</td>
-		</tr>
-		
-		
-		
-    	      <c:forEach var="obj" items="${loginList}">
-		      <tr>
-		                 <td> <c:out value="${obj.lid}"/> </td>
-		                 <td> <c:out value="${obj.loginId}"/> </td>
-				         <td> <c:out value="${obj.password}"/> </td>
-				         <td> <c:out value="${obj.loginType}"/> </td>
-			  </tr>
-				
-				
-				
-				
-				 <td> <a href="deleteByLId/${obj.lid}">Delete </a> /
-				     <a href="editByLId/${obj.lid}">Edit</a> 
-				 </td>
-				 
-				 
-		    
-	      </c:forEach>
-          </table>
 	
 </form:form>
-
 </body>
 </html>

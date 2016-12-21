@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.dao;
+/*package com.niit.shoppingcart.dao;
 
 import java.util.List;
 
@@ -12,3 +12,4 @@ public interface LoginDAO {
 	boolean delete(int lid);
 
 }
+*/

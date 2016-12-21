@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.model;
+/*package com.niit.shoppingcart.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -70,5 +70,5 @@ public class User {
 		this.enabled = enabled;
 	}
 	
-	/*pradeeeppp*/
-}
+	pradeeeppp
+}*/

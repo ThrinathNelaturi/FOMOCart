@@ -226,15 +226,6 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         
-        
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown"  href="#Admin">ADMIN <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="Supplier">supplier</a></li>
-            <li><a href="Category">category</a></li>
-            <li><a href="Product">products</a></li>
-          </ul>
-        </li>
         <li><a href="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li><a href="#about">ABOUT</a></li>
@@ -244,32 +235,17 @@
   </div>
 </nav>
 
+
 <div class="jumbotron text-center">
 <form class="form-inline">
-    <c:if test="${UserClickedProducts}">
-    <input type="text" class="form-control" size="50" placeholder="Product Name" required>
-    <a href="#product"><button type="button" class="btn btn-info">
-      <span class="glyphicon glyphicon-search"></span> Search
-      </button></a>
-    </c:if>
-     <c:if test="${UserClickedSupplier}">
-    <input type="text" class="form-control" size="50" placeholder="Supplier Name" required>
-    <a href="#product"><button type="button" class="btn btn-info">
-      <span class="glyphicon glyphicon-search"></span> Search
-      </button></a>
-    </c:if>
-     <c:if test="${UserClickedCategory}">
-    <input type="text" class="form-control" size="50" placeholder="Category Name" required>
-    <a href="#product"><button type="button" class="btn btn-info">
-      <span class="glyphicon glyphicon-search"></span> Search
-      </button></a>
-    </c:if>
+       
     <c:if test="${Homepage}">
     <input type="text" class="form-control" size="50" placeholder="Product Name" required>
     <a href="#product"><button type="button" class="btn btn-info">
       <span class="glyphicon glyphicon-search"></span> Search
       </button></a>
     </c:if>
+    
     <c:if test="${indexpage}">
     <input type="text" class="form-control" size="50" placeholder="Product Name" required>
     <a href="#product"><button type="button" class="btn btn-info">
@@ -277,7 +253,6 @@
       </button></a>
     </c:if>
     
-    <!-- connect this -->
 </form>
 </div>
 
@@ -294,22 +269,6 @@ invalid credentials
 <c:if test="${UserClickedRegister}">
 <jsp:include page="register.jsp"></jsp:include>
 </c:if>
-
-<c:if test="${UserClickedSupplier}">
-<jsp:include page="supplier.jsp"></jsp:include>
-</c:if>
-
-<c:if test="${UserClickedProducts}">
-<jsp:include page="products.jsp"></jsp:include>
-</c:if>
-
-<c:if test="${UserClickedCategory}">
-<jsp:include page="category.jsp"></jsp:include>
-</c:if>
-
-
-
-
 
 <div id="Categories" class="container-fluid text-center bg-grey">
 
@@ -429,11 +388,7 @@ invalid credentials
 
 </div>
 
-
- 
-   
-  
-  <center><h2>What our customers say</h2></center>
+ <center><h2>What our customers say</h2></center>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     Indicators
     <ol class="carousel-indicators">
@@ -465,45 +420,7 @@ invalid credentials
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-
-
-
-
-
-
-<!-- Container (Admin Section) -->
-<div id="Admin" class="container-fluid text-center">
-  <h2>ADMIN</h2>
-  <!-- <h4>What we offer</h4> -->
-  <br>
-  <div class="row slideanim">
-   
-    <div class="col-sm-4">
-      <a href="Supplier"><span class="	glyphicon glyphicon-briefcase logo-small"></span></a>
-      <h4>Supplier</h4>
-      <p>Supplier details</p>
-    </div>
-        <div class="col-sm-4">
-      <a href="Category"><span class="glyphicon glyphicon-tasks logo-small"></span></a>
-      <h4>Category</h4>
-      <p>Category details</p>
-    </div>
-       <div class="col-sm-4">
-      <a href="Product"><span class="glyphicon glyphicon-gift logo-small"></span></a>
-      <h4>Product</h4>
-      <p>Product details</p>
-    </div>
-    
-  </div>
-  </div>
   
- 
-
-  
-
-
-
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
@@ -531,6 +448,7 @@ invalid credentials
     </div>
   </div>
 </div>
+
 <!-- Container (Contact Section) -->
 <div id="contactus" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACT</h2>

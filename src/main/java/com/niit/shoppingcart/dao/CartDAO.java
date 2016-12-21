@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.dao;
+/*package com.niit.shoppingcart.dao;
 
 import java.util.List;
 
@@ -17,4 +17,4 @@ public interface CartDAO {
 	public long cartsize(int userId);
 	public double CartPrice(int userId);
 	public void pay(int userId);
-}
+}*/

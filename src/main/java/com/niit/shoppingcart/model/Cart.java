@@ -1,51 +1,46 @@
-package com.niit.shoppingcart.model;
+/*package com.niit.shoppingcart.model;
 
-import java.io.Serializable;
+public class Cart {
 
-public class Cart implements Serializable{
+	public void setProductid(int id) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	private static final long serialVersionUID = 1L;
+	public void setProductname(String name) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	private String cardnumber;
-	private String date;
-	private String cvv;
-	private String method;
-	private String name;
-	
-	public String getName() {
-		return name;
+	public void setPrice(double price) {
+		// TODO Auto-generated method stub
+		
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setQuantity(int i) {
+		// TODO Auto-generated method stub
+		
 	}
-	public String getCardnumber() {
-		return cardnumber;
+
+	public void setStatus(String string) {
+		// TODO Auto-generated method stub
+		
 	}
-	public void setCardnumber(String cardnumber) {
-		this.cardnumber = cardnumber;
+
+	public void setUserid(int attribute) {
+		// TODO Auto-generated method stub
+		
 	}
-	public String getDate() {
-		return date;
+
+	public int getQuantity() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	public void setDate(String date) {
-		this.date = date;
+
+	public int getProductid() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	public String getCvv() {
-		return cvv;
-	}
-	public void setCvv(String cvv) {
-		this.cvv = cvv;
-	}
-	public String getMethod() {
-		return method;
-	}
-	public void setMethod(String method) {
-		this.method = method;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	public String toCart(){
-		return "Cart [username= " + cardnumber + "]";
-	}	
+
 }
+*/

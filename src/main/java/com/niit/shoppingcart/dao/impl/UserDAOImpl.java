@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.dao.impl;
+/*package com.niit.shoppingcart.dao.impl;
 
 import java.util.List;
 
@@ -93,5 +93,5 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 	}
-	/*pradeeeppp*/
-}
+	pradeeeppp
+}*/

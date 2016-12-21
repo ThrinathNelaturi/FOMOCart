@@ -89,8 +89,8 @@
 				
 				
 				
-				 <td> <a href="deleteById/${obj.id}">Delete </a> /
-				     <a href="editById/${obj.id}">Edit</a> 
+				 <td> <a href="adddeleteproduct/${obj.id}">Delete </a> /
+				     <a href="addupdateproduct/${obj.id}">Edit</a> 
 				 </td>
 				 
 				 

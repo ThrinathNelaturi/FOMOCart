@@ -1,6 +1,4 @@
-
-
-package com.niit.shoppingcart.controller;
+/*package com.niit.shoppingcart.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -57,7 +55,7 @@ public class CartController {
 	   cart2.setQuantity(1);
 	   q=cart2.getQuantity();
 	   cart2.setStatus("C");
-	  /* cart2.setUserid((int) session.getAttribute("userid"));*/
+	   cart2.setUserid((int) session.getAttribute("userid"));
 	   cartDAO.save(cart2);
 	            return "redirect:/Cart1";
 	  }else{
@@ -65,7 +63,7 @@ public class CartController {
 	   Product product1 = productDAO.get(productid);
 	   q=cart1.getQuantity();
 	   cart1.setStatus("C");
-	   /*cart1.setUserid((int) session.getAttribute("userid"));*/
+	   cart1.setUserid((int) session.getAttribute("userid"));
 	   p=product1.getPrice();
 	   q+=1;
 	   p=q*p;
@@ -103,7 +101,7 @@ public class CartController {
 			return "redirect:/Cart1";
 		}
 	 
-	 /*
+	 
 	 @RequestMapping("Cart1")
 		public String viewCart(Model model, HttpSession session) {
 			int userId = (Integer) session.getAttribute("userId");
@@ -118,7 +116,7 @@ public class CartController {
 			return "Cart1";
 		}
 	 
-	 */
+	 
 	 
 
 	 @RequestMapping(value="/Cart1")
@@ -146,4 +144,4 @@ public class CartController {
 	  cartDAO.pay((Integer) session.getAttribute("userid"));
 	  return "index";
 	 }
-	}
+	}*/

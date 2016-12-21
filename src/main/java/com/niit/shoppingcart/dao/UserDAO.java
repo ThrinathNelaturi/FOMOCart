@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.dao;
+/*package com.niit.shoppingcart.dao;
 
 import java.util.List;
 
@@ -17,5 +17,6 @@ public interface UserDAO {
 	public boolean isValidUser(String userName,String password);
 	
 public User get(String userName);
-/*pradeeeppp*/
+pradeeeppp
 }
+*/

@@ -38,7 +38,7 @@ if (id.equals("niit") && pwd.equals("niit"))
 	{
 		//model.addAttribute("SucessMessage","You sucessfully logged in");
 		session.setAttribute("SucessMessage","You sucessfully logged in");
-		return "success";
+		return "User";
 	}
 else 
 	{

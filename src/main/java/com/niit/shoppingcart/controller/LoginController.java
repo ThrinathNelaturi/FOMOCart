@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.controller;
+/*package com.niit.shoppingcart.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,3 +56,4 @@ public class LoginController
 	}
 
 }
+*/

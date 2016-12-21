@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.controller;
+/*package com.niit.shoppingcart.controller;
 
 import java.io.File;
 import java.io.InputStream;
@@ -22,7 +22,7 @@ public class MultiPartController {
 			{
 				try
 				{
-					/*inputStream=file.getInputStream();
+					inputStream=file.getInputStream();
 					outputStream=new FileOutputStream(path+filename);
 					int readBytes=0;
 					byte[] buffer= new byte[1024];
@@ -31,7 +31,7 @@ public class MultiPartController {
 						outputStream.write(buffer, 0, readBytes);
 					}
 					System.out.println("File Uploaded");
-					System.out.println(path+filename);*/
+					System.out.println(path+filename);
 					file.transferTo(new File(path));
 				}
 				catch (Exception e)
@@ -68,5 +68,6 @@ public class MultiPartController {
 			}
 		}
 	}
-	/*tanuja*/
+	tanuja
 }
+*/

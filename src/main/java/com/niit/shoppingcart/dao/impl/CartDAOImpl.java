@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.dao.impl;
+/*package com.niit.shoppingcart.dao.impl;
 
 import java.util.List;
 
@@ -93,7 +93,7 @@ public class CartDAOImpl implements CartDAO{
 			return list.get(0);
 		}
 	}
-	/*@Transactional
+	@Transactional
 	@SuppressWarnings("unchecked")
 	public Cart getproduct(int id) {
 		String hql="from Cart where productid= "+id;
@@ -102,7 +102,7 @@ public class CartDAOImpl implements CartDAO{
 		List<Cart>listproduct=query.list();
 		//List<Cart> listproduct = (List<Cart>) query.list();
 		return listproduct.get(0);
-	}*/
+	}
 
 	@Transactional
 	@SuppressWarnings({ "unchecked", "deprecation" })
@@ -155,3 +155,4 @@ public class CartDAOImpl implements CartDAO{
 	}
 
 	}
+*/

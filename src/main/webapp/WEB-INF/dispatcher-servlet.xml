@@ -11,9 +11,9 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 	
-    <context:component-scan base-package="com.niit.shoppingcart.*" />
+    <!-- <context:component-scan base-package="com.niit.shoppingcart.*" />
 	<context:property-placeholder location="classpath:log4j.properties"/> 
-	<mvc:annotation-driven />
+	<mvc:annotation-driven /> -->
    <bean 
    		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
       <property name="prefix" value="/WEB-INF/views/" />

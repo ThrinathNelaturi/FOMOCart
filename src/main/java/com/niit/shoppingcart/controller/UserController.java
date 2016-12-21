@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.controller;
+/*package com.niit.shoppingcart.controller;
 
 
 import java.util.Collection;
@@ -83,5 +83,6 @@ public class UserController {
 		return "Admin";
 
 }
-/*pradeeeppp*/
+pradeeeppp
 }  
+*/

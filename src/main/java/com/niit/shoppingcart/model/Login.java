@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.model;
+/*package com.niit.shoppingcart.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -50,3 +50,4 @@ public class Login {
 	
 	
 }
+*/
